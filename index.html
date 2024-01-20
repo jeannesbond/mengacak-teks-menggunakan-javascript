@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Text Shuffle</title>
+	</head>
+	<body>
+		<span id="Teks">Lololo, gak bahaya ta?</span>
+		<script>
+  			function shuffelWord (word){
+    			var shuffledWord = '';
+    			var charIndex = 0;
+    			word = word.split('');
+    			while(word.length > 0){
+        			charIndex = word.length * Math.random() << 0;
+        			shuffledWord += word[charIndex];
+       				word.splice(charIndex,1);
+    		}
+    		return shuffledWord;
+			}
+
+			setInterval(function(){
+				document.querySelector("#Teks").textContent = shuffelWord(document.querySelector("#Teks").textContent);
+			},100)
+		</script>
+	</body>
+</html>
